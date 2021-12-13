@@ -12,7 +12,7 @@ Feature: Test login page
     And I enter email for user "user1" to login form
     And I enter password for user "user1" to login form
     When I click "Log in" button on login page
-    Then I should see user name "Coach F" in profile menu
+    Then I should see user name "user1" in profile menu
 
   Scenario Outline: Should see error for invalid credentials
     And I enter email "<Email>" to login form
@@ -38,7 +38,7 @@ Feature: Test login page
     And I enter password for user "user1" to login form
     And I check Remember me checkbox
     And I click "Log in" button on login page
-    And I should see user name "Coach F" in profile menu
+    And I should see user name "user1" in profile menu
     And I click log out button in user profile
     And I open "Login" page
     And I should see user "user1" email saved in login form

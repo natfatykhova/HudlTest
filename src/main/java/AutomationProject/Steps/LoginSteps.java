@@ -25,8 +25,8 @@ public class LoginSteps {
     }
 
     @Then("I should see user name {string} in profile menu")
-    public void iShouldSeeUserProfile(String username) {
-        loginPage.shouldSeeUsername(username);
+    public void iShouldSeeUserProfile(String user) {
+        loginPage.shouldSeeUsername(user);
     }
 
     @Then("I should see error message {string}")

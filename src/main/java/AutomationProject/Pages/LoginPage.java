@@ -196,10 +196,16 @@ public class LoginPage {
     /**
      * Shove see username in profile
      *
-     * @param username
+     * @param user
      */
-    public void shouldSeeUsername(String username) {
+    public void shouldSeeUsername(String user) {
         waitSteps.setSleepFor(5);
-        commonClicks.shouldSeeElementTextMatch(UsernameProfile, username);
+        commonClicks.shouldSeeElementTextMatch(
+                UsernameProfile,
+                "Coach " + commonClicks.readPropertiesFromFile(
+                        CREDS_PROP,
+                        user + "name"
+                )
+        );
     }
 }
