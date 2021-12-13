@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class Test login page</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class Test login page</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/default-package.html">default-package</a> &gt; Test login page</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">1</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">18.972s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+<li>
+<a href="#tab3">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="Should log in with valid credentials"></a>
+<h3 class="failures">Should log in with valid credentials</h3>
+<span class="code">
+<pre>org.junit.ComparisonFailure: expected:&lt;Coach [N]&gt; but was:&lt;Coach [F]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at AutomationProject.CommonUtils.CommonClicks.shouldSeeElementTextMatch(CommonClicks.java:71)
+	at AutomationProject.Pages.LoginPage.shouldSeeUsername(LoginPage.java:185)
+	at AutomationProject.Steps.LoginSteps.iShouldSeeUserProfile(LoginSteps.java:25)
+	at ✽.I should see user name &quot;Coach N&quot; in profile menu(file:///Users/natala/Documents/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/Test_Task_NatF2021/src/test/resources/features/LoginTest.feature:16)
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">Should log in with valid credentials</td>
+<td class="failures">18.972s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>
+@login @test
+Scenario: Should log in with valid credentials               ?[90m# ///Users/natala/Documents/Работа/Test_Task_NatF2021/src/test/resources/features/LoginTest.feature:12?[0m
+Re-using an existing driver binary found at: /var/folders/jb/kh8slhrx62s4gthylpd3jctr0000gn/T/webdriver_binaries/chromedriver_96.0.4664.45
+  ?[32mGiven ?[0m?[32mI open ?[0m?[32m?[1m&quot;Login&quot;?[0m?[32m page?[0m                                  ?[90m# AutomationProject.Steps.CommonSteps.goToPage(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI should see login form?[0m                                ?[90m# AutomationProject.Steps.LoginSteps.iShouldSeeLoginForm()?[0m
+  ?[32mAnd ?[0m?[32mI enter ?[0m?[32m?[1memail?[0m?[32m &quot;?[0m?[32m?[1mnata.fatykhova@gmail.com?[0m?[32m&quot; to login form?[0m ?[90m# AutomationProject.Steps.LoginSteps.enterEmail(java.lang.String,java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI enter ?[0m?[32m?[1mpassword?[0m?[32m &quot;?[0m?[32m?[1mLondon21?[0m?[32m&quot; to login form?[0m              ?[90m# AutomationProject.Steps.LoginSteps.enterEmail(java.lang.String,java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32mI click ?[0m?[32m?[1m&quot;Log in&quot;?[0m?[32m button on login page?[0m                 ?[90m# AutomationProject.Steps.LoginSteps.iClickButtonOnLoginForm(java.lang.String)?[0m
+  ?[31mThen ?[0m?[31mI should see user name ?[0m?[31m?[1m&quot;Coach N&quot;?[0m?[31m in profile menu?[0m      ?[90m# AutomationProject.Steps.LoginSteps.iShouldSeeUserProfile(java.lang.String)?[0m
+      ?[31morg.junit.ComparisonFailure: expected:&lt;Coach [N]&gt; but was:&lt;Coach [F]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at AutomationProject.CommonUtils.CommonClicks.shouldSeeElementTextMatch(CommonClicks.java:71)
+	at AutomationProject.Pages.LoginPage.shouldSeeUsername(LoginPage.java:185)
+	at AutomationProject.Steps.LoginSteps.iShouldSeeUserProfile(LoginSteps.java:25)
+	at ✽.I should see user name &quot;Coach N&quot; in profile menu(file:///Users/natala/Documents/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/Test_Task_NatF2021/src/test/resources/features/LoginTest.feature:16)
+?[0m
+
+    Embedding Should log in with valid credentials [image/png 75082 bytes]
+
+</pre>
+</span>
+</div>
+<div id="tab3" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>Starting ChromeDriver 96.0.4664.45 (76e4c1bb2ab4671b8beba3444e61c0f17584b2fc-refs/branch-heads/4664@{#947}) on port 25769
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Dec 13, 2021 12:31:27 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 7.2</a> at 13 Dec 2021, 12:31:42</p>
+</div>
+</div>
+</body>
+</html>

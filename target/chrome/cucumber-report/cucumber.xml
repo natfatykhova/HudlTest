@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="19.044">
+    <testcase classname="Test login page" name="Should log in with valid credentials" time="18.753">
+        <failure message="expected:&lt;Coach [N]&gt; but was:&lt;Coach [F]&gt;" type="org.junit.ComparisonFailure">
+            <![CDATA[Given I open "Login" page...................................................passed
+And I should see login form.................................................passed
+And I enter email "nata.fatykhova@gmail.com" to login form..................passed
+And I enter password "London21" to login form...............................passed
+When I click "Log in" button on login page..................................passed
+Then I should see user name "Coach N" in profile menu.......................failed
+
+StackTrace:
+org.junit.ComparisonFailure: expected:<Coach [N]> but was:<Coach [F]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at AutomationProject.CommonUtils.CommonClicks.shouldSeeElementTextMatch(CommonClicks.java:71)
+	at AutomationProject.Pages.LoginPage.shouldSeeUsername(LoginPage.java:185)
+	at AutomationProject.Steps.LoginSteps.iShouldSeeUserProfile(LoginSteps.java:25)
+	at ✽.I should see user name "Coach N" in profile menu(file:///Users/natala/Documents/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/Test_Task_NatF2021/src/test/resources/features/LoginTest.feature:16)
+]]>
+        </failure>
+    </testcase>
+</testsuite>

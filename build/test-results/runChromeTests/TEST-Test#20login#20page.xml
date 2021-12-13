@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test login page" tests="1" skipped="0" failures="1" errors="0" timestamp="2021-12-13T12:31:22" hostname="MacBook-Air-Natalie.local" time="18.972">
+  <properties/>
+  <testcase name="Should log in with valid credentials" classname="Test login page" time="18.972">
+    <failure message="org.junit.ComparisonFailure: expected:&lt;Coach [N]&gt; but was:&lt;Coach [F]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;Coach [N]&gt; but was:&lt;Coach [F]&gt;
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at AutomationProject.CommonUtils.CommonClicks.shouldSeeElementTextMatch(CommonClicks.java:71)
+	at AutomationProject.Pages.LoginPage.shouldSeeUsername(LoginPage.java:185)
+	at AutomationProject.Steps.LoginSteps.iShouldSeeUserProfile(LoginSteps.java:25)
+	at ✽.I should see user name &quot;Coach N&quot; in profile menu(file:///Users/natala/Documents/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/Test_Task_NatF2021/src/test/resources/features/LoginTest.feature:16)
+</failure>
+  </testcase>
+  <system-out><![CDATA[
+@login @test
+Scenario: Should log in with valid credentials               ?[90m# ///Users/natala/Documents/Работа/Test_Task_NatF2021/src/test/resources/features/LoginTest.feature:12?[0m
+Re-using an existing driver binary found at: /var/folders/jb/kh8slhrx62s4gthylpd3jctr0000gn/T/webdriver_binaries/chromedriver_96.0.4664.45
+  ?[32mGiven ?[0m?[32mI open ?[0m?[32m?[1m"Login"?[0m?[32m page?[0m                                  ?[90m# AutomationProject.Steps.CommonSteps.goToPage(java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI should see login form?[0m                                ?[90m# AutomationProject.Steps.LoginSteps.iShouldSeeLoginForm()?[0m
+  ?[32mAnd ?[0m?[32mI enter ?[0m?[32m?[1memail?[0m?[32m "?[0m?[32m?[1mnata.fatykhova@gmail.com?[0m?[32m" to login form?[0m ?[90m# AutomationProject.Steps.LoginSteps.enterEmail(java.lang.String,java.lang.String)?[0m
+  ?[32mAnd ?[0m?[32mI enter ?[0m?[32m?[1mpassword?[0m?[32m "?[0m?[32m?[1mLondon21?[0m?[32m" to login form?[0m              ?[90m# AutomationProject.Steps.LoginSteps.enterEmail(java.lang.String,java.lang.String)?[0m
+  ?[32mWhen ?[0m?[32mI click ?[0m?[32m?[1m"Log in"?[0m?[32m button on login page?[0m                 ?[90m# AutomationProject.Steps.LoginSteps.iClickButtonOnLoginForm(java.lang.String)?[0m
+  ?[31mThen ?[0m?[31mI should see user name ?[0m?[31m?[1m"Coach N"?[0m?[31m in profile menu?[0m      ?[90m# AutomationProject.Steps.LoginSteps.iShouldSeeUserProfile(java.lang.String)?[0m
+      ?[31morg.junit.ComparisonFailure: expected:<Coach [N]> but was:<Coach [F]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at AutomationProject.CommonUtils.CommonClicks.shouldSeeElementTextMatch(CommonClicks.java:71)
+	at AutomationProject.Pages.LoginPage.shouldSeeUsername(LoginPage.java:185)
+	at AutomationProject.Steps.LoginSteps.iShouldSeeUserProfile(LoginSteps.java:25)
+	at ✽.I should see user name "Coach N" in profile menu(file:///Users/natala/Documents/%D0%A0%D0%B0%D0%B1%D0%BE%D1%82%D0%B0/Test_Task_NatF2021/src/test/resources/features/LoginTest.feature:16)
+?[0m
+
+    Embedding Should log in with valid credentials [image/png 75082 bytes]
+
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 96.0.4664.45 (76e4c1bb2ab4671b8beba3444e61c0f17584b2fc-refs/branch-heads/4664@{#947}) on port 25769
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+Dec 13, 2021 12:31:27 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
