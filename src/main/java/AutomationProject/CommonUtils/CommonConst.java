@@ -11,4 +11,6 @@ public class CommonConst {
     public static final String BASE_URL = "https://www.hudl.com";
     public static final String JOIN_AS_ORG_URL = "/app/auth/login/organization";
     public static final String SIGN_UP_URL = "/register/signup";
+
+    public static final String CREDS_PROP = "creds.property";
 }

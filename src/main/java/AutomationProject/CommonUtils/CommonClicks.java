@@ -5,6 +5,12 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
 import static AutomationProject.Steps.BrowserSetUp.getWebDriver;
 import static org.junit.Assert.*;
 
@@ -100,4 +106,37 @@ public class CommonClicks {
         js.executeScript("arguments[0].click();", element);
     }
 
+    /**
+     * Read property from file
+     *
+     * @param propFileTitle
+     * @param propertyToRead
+     * @return
+     */
+    public String readPropertiesFromFile(String propFileTitle, String propertyToRead) {
+        File propFile = new File(new File("").getAbsolutePath() + "/src/test/resources/");
+        Properties properties = new Properties();
+        InputStream input = null;
+        File[] propFilesList = propFile.listFiles();
+        for (File file : propFilesList) {
+            if (file.getName().equals(propFileTitle)) {
+                try {
+                    input = new FileInputStream(file);
+                    properties.load(input);
+                    return properties.getProperty(propertyToRead);
+                } catch (Exception ignored) {
+                    System.out.println("Ignore exception for read property file");
+                } finally {
+                    if (input != null) {
+                        try {
+                            input.close();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
+        }
+        return null;
+    }
 }

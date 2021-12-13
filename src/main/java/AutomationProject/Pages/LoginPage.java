@@ -7,10 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import java.util.HashMap;
-import java.util.Map;
 
-import static AutomationProject.CommonUtils.CommonConst.JOIN_AS_ORG_URL;
-import static AutomationProject.CommonUtils.CommonConst.SIGN_UP_URL;
+import static AutomationProject.CommonUtils.CommonConst.*;
 import static AutomationProject.Steps.BrowserSetUp.getWebDriver;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -78,6 +76,21 @@ public class LoginPage {
     }
 
     /**
+     * Enter email / password for user from property file
+     *
+     * @param username
+     */
+    public void enterEmailPwdForUser(String input, String username) {
+        commonClicks.sendKeys(
+                (input.equals("email")) ? EmailInput : PasswordInput,
+                commonClicks.readPropertiesFromFile(
+                        CREDS_PROP,
+                        username + input
+                )
+        );
+    }
+
+    /**
      * Enter text in email / password input
      *
      * @param input
@@ -126,13 +139,18 @@ public class LoginPage {
     }
 
     /**
-     * Check user data is filled
+     * Check user email is filled
      *
-     * @param asMap
+     * @param username
      */
-    public void shouldSeeUserData(Map<String, String> asMap) {
+    public void shouldSeeUserEmail(String username) {
         waitSteps.setSleepFor(2);
-        assertEquals(asMap.get("email"), EmailInput.getAttribute("value"));
+        assertEquals(
+                commonClicks.readPropertiesFromFile(
+                        CREDS_PROP,
+                        username + "email"
+                ),
+                EmailInput.getAttribute("value"));
         assertTrue(PasswordInput.getAttribute("value").isEmpty());
     }
 

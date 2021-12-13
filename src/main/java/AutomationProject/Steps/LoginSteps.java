@@ -1,7 +1,6 @@
 package AutomationProject.Steps;
 
 import AutomationProject.Pages.LoginPage;
-import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,6 +8,11 @@ import io.cucumber.java.en.When;
 public class LoginSteps {
 
     LoginPage loginPage = new LoginPage();
+
+    @And("^I enter (email|password) for user \"([^\"]*)\" to login form$")
+    public void iEnterEmailForUserToLoginForm(String input, String username) {
+        loginPage.enterEmailPwdForUser(input, username);
+    }
 
     @And("^I enter (email|password) \"([^\"]*)\" to login form$")
     public void enterEmail(String input, String text) {
@@ -40,9 +44,9 @@ public class LoginSteps {
         loginPage.clickLogOutButton();
     }
 
-    @And("I should see user data saved in login form")
-    public void iShouldSeeUserDataSavedInLoginForm(DataTable data) {
-        loginPage.shouldSeeUserData(data.asMap(String.class, String.class));
+    @And("I should see user {string} email saved in login form")
+    public void iShouldSeeUserDataSavedInLoginForm(String username) {
+        loginPage.shouldSeeUserEmail(username);
     }
 
     @And("I should see login form")
